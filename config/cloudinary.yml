@@ -1,0 +1,18 @@
+development:
+  cloud_name: hiohypxm9
+  api_key: '237962219592879'
+  api_secret: hf1nFHkvfMRdypBULzelG6evI6M
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hiohypxm9
+  api_key: '237962219592879'
+  api_secret: hf1nFHkvfMRdypBULzelG6evI6M
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hiohypxm9
+  api_key: '237962219592879'
+  api_secret: hf1nFHkvfMRdypBULzelG6evI6M
+  enhance_image_tag: true
+  static_image_support: false

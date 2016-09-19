@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Life Time Community</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%=render 'layouts/header'%>
+<div class="container-fluid">
+  <div class="row">
+    <div class= "col-sm-12">
+       
+    </div>
+    <div class="col-sm-3">  
+       
+    </div>
+    <div class="col-sm-8">
+     <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+       <%= yield %>
+    </div>
+</body>
+</html>
