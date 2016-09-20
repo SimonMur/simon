@@ -11,7 +11,10 @@
 	<% @post.tags.each do |tag| %>
 	<%= link_to tag.name %>
 	<% end %>
-  <h2><%= @post.title %></h2>
+  <h1 style="font-size: 30px;
+  color: orange;
+  font-family: Times New Roman, Georgia, Serif;
+  font-weight: bold;"><%= @post.title %></h1>
  
   <div><%= raw @post.body %></div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
