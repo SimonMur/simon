@@ -1,8 +1,24 @@
 <div class="container-fluid">
 
-    <%=render 'layouts/carousel' %>
-    
-    <% @posts.each do |post| %>
+   <div class="row">
+    <div class= "col-sm-12">
+      
+    </div>
+    <div class="col-sm-3">  
+  <%=render 'layouts/ad1'%>
+    </div>
+    <div class="col-sm-6" style='background-color: rgba(0, 0, 0 ,0.05)'>
+  <%=render 'layouts/carousel'%>
+ <h1 style="font-size: 40px;
+  color: orange;
+  font-family: Times New Roman, Georgia, Serif;
+  font-weight: bold;"> Man U vs SouthHamton Preview</h1>
+  <div class='video'>
+  <iframe title="YouTube video player" class="youtube-player" type="text/html" 
+width="640" height="390" src="http://www.youtube.com/embed/P1aj30OtMwc"
+frameborder="0" allowFullScreen></iframe>
+</div>
+     <% @posts.each do |post| %>
    <div class= 'float'>
       <div class="text-center">
          <%= cl_image_tag post.picture_url :transformation => [{:height => 120, :width => 120, :crop => "thumb", :gravity => "face", :radius => 5}] %>
@@ -16,6 +32,10 @@
       <br>
 </div>
     <% end %>
-  </div>
-  
+    </div>
+    <div class="col-sm-3">  
+  <div class="videos">
+<%= video_tag("Wildlife.wmv", controls: true, autobuffer: true)%>
+</div>
 
+      
