@@ -1,18 +1,19 @@
+---
 development:
-  cloud_name: hiohypxm9
-  api_key: '237962219592879'
-  api_secret: hf1nFHkvfMRdypBULzelG6evI6M
+  cloud_name: hkc0gq9vt
+  api_key: '819175184846141'
+  api_secret: BBisNe71REJzldx6x7ce-_7iVFE
   enhance_image_tag: true
   static_image_support: false
 production:
-  cloud_name: hiohypxm9
-  api_key: '237962219592879'
-  api_secret: hf1nFHkvfMRdypBULzelG6evI6M
+  cloud_name: hkc0gq9vt
+  api_key: '819175184846141'
+  api_secret: BBisNe71REJzldx6x7ce-_7iVFE
   enhance_image_tag: true
   static_image_support: true
 test:
-  cloud_name: hiohypxm9
-  api_key: '237962219592879'
-  api_secret: hf1nFHkvfMRdypBULzelG6evI6M
+  cloud_name: hkc0gq9vt
+  api_key: '819175184846141'
+  api_secret: BBisNe71REJzldx6x7ce-_7iVFE
   enhance_image_tag: true
   static_image_support: false
