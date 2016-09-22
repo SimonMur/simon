@@ -21,7 +21,7 @@ frameborder="0" allowFullScreen></iframe>
      <% @posts.each do |post| %>
    <div class= 'float'>
      
-         <%= cl_image_tag post.picture_url :transformation => [{:height => 150, :width => 130, :crop => "thumb", :radius => 0}] %>
+         <%= cl_image_tag post.picture_url :transformation => [{:height => 150, :width => 130, :crop => "thumb", :sign_url => true,:radius => 0}] %>
     
         <p><%= post.title %></p>
      
