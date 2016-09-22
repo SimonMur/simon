@@ -7,9 +7,9 @@
     <div class="col-sm-3">  
   <%=render 'layouts/ad1'%>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-9">
 	<% @post.tags.each do |tag| %>
-	<%= link_to tag.name %>
+	<%= link_to tag.name, tag_path(tag.name) %>
 	<% end %>
   <h1 style="font-size: 30px;
   color: orange;
@@ -18,6 +18,8 @@
  
   <div><%= raw @post.body %></div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
+<div><%= render @post.tags %></div>
+
 </div>
 </div>
 </div>

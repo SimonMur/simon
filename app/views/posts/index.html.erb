@@ -7,7 +7,7 @@
     <div class="col-sm-3">  
   <%=render 'layouts/ad1'%>
     </div>
-    <div class="col-sm-6" style='background-color: rgba(0, 0, 0 ,0.05)'>
+    <div class="col-sm-6" style='background-color: rgba(0, 0, 0 ,0.03)'>
   <%=render 'layouts/carousel'%>
  <h1 style="font-size: 40px;
   color: orange;
@@ -20,14 +20,16 @@ frameborder="0" allowFullScreen></iframe>
 </div>
      <% @posts.each do |post| %>
    <div class= 'float'>
-      <div class="text-center">
-         <%= cl_image_tag post.picture_url :transformation => [{:height => 120, :width => 120, :crop => "thumb", :gravity => "face", :radius => 5}] %>
-        <h2><%= post.title %></h2>
+     
+         <%= cl_image_tag post.picture_url :transformation => [{:height => 150, :width => 130, :crop => "thumb", :radius => 0}] %>
+    
+        <p><%= post.title %></p>
+     
         <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
-      </div>
+    
 
       <div class="text-center">
-        <%= link_to "Read more.....", post_path(post) %>
+        <h3><%= link_to "Read more.....", post_path(post) %></h3>
       </div>
       <br>
 </div>
@@ -35,7 +37,7 @@ frameborder="0" allowFullScreen></iframe>
     </div>
     <div class="col-sm-3">  
   <div class="videos">
-<%= video_tag("Wildlife.wmv", controls: true, autobuffer: true)%>
+<%=video_tag("http://res.cloudinary.com/hkc0gq9vt/video/upload/v1474443284/3052397_VIDEO_HIGH_H264_qhap5u.mp4")%>
 </div>
 
-      
+      <%= render @posts %>

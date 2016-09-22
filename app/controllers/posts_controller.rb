@@ -2,9 +2,14 @@ class PostsController < ApplicationController
 	before_action :find_post, only: [:edit, :update, :show, :delete]
 
 	# Index action to render all posts
-	def index
-		@posts = Post.all
-	end
+	
+   def index  
+     if params[:tag]
+       @posts = Post.tagged_with(params[:tag])
+     else
+       @posts = Post.all
+     end
+ end
 
 	# New action for creating post
 	def new
@@ -55,7 +60,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :body, :tag_list)
+		params.require(:post).permit(:title, :picture, :body, :tag_list)
 	end
 
 	def find_post
