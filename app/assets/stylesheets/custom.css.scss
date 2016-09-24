@@ -497,7 +497,55 @@ background: rgb(0, 0, 0); /* fallback color */
    padding: 1px;
   
    }
+ input {
 
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.input-group-addon input  { padding-left:  30px; }
+.input-group-addon input { padding-right: 30px; }
+height: auto !important;
+border: 1px solid rgb(128, 100, 162);
+padding: 10px;
+border-radius: 5px;
+}
+
+input[type="text"] {
+border: 1px solid rgb(128, 100, 162);}
+input[type="email"] {
+border: 1px solid rgb(128, 100, 162);}
+
+input[type="text"]:hover{
+border: 1px solid rgb(128, 100, 162);}
+input[type="email"]:hover{
+border: 1px solid rgb(128, 100, 162);}
+
+input[type="submit"] {
+border: 1px solid rgb(128, 100, 162);
+background-color: rgb(255, 255, 255);
+color: rgb(60, 24, 76);
+font-weight: bold;
+border-radius: 30px;
+width: 40%;
+padding: 8px;
+margin-top: 10px;}
+input[type="submit"]:hover {
+border: 1px solid rgb(128, 100, 162);;
+background-color: rgb(128, 100, 162);;
+color: white;
+cursor: pointer;}
+inner-addon {
+  position: relative;
+}
 div.float h3 {
  
 text-align:center;

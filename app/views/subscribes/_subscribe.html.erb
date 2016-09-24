@@ -1,0 +1,26 @@
+<%= form_for([@post, @post.subscribes.build]) do |f| %>
+	<% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:" %>
+      </h2>
+      <ul>
+        <% @post.erros.full_messages.each do |msg| %>
+          <li>
+            <%= mgs %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="form-group">
+		<%= f.text_field :name, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.email_field :email, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.button :submit %>
+	</div>
+<% end %>

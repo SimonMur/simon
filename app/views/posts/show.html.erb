@@ -1,3 +1,5 @@
+<% provide(:title, @post.title ) %>
+
  <div class="container-fluid">
 
    <div class="row">
@@ -5,21 +7,59 @@
       
     </div>
     <div class="col-sm-3">  
+    <div>
   <%=render 'layouts/ad1'%>
+</div>
+</br>
+  <div style='background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.1);'>
+   <div class="col-xs-12">
+
+    <p> Subscribe new letter to receive latest <%= render @post.tags %> posts </p>
+   <%=render 'visitors/form'%>
+   </div>
+ </div>
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-7">
 	<% @post.tags.each do |tag| %>
-	<%= link_to tag.name, tag_path(tag.name) %>
 	<% end %>
-  <h1 style="font-size: 30px;
+  <h1 style="font-size: 50px;
   color: orange;
-  font-family: Times New Roman, Georgia, Serif;
+  font-family: Impact;
   font-weight: bold;"><%= @post.title %></h1>
  
   <div><%= raw @post.body %></div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
 <div><%= render @post.tags %></div>
+<div class="comments"> 
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+  <div id="disqus_thread"></div>
+<script>
 
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//lifetimer.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+<% end %></div>
 </div>
+<div class="col-sm-2">  
+  
+    </div>
 </div>
 </div>

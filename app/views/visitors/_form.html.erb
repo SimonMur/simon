@@ -1,0 +1,23 @@
+<%= form_for([@post, @post.visitors.build]) do |f| %>
+
+	<div class="form-group">
+		<div class="input-group" style="color:rgb(128, 100, 162);">
+		<span class="input-group-addon">
+                <i class="fa fa-user"></i>
+        </span>  
+
+		<%= f.text_field :name, class: "form-control", placeholder: "Your name" %>
+</div>  
+	</div>
+	<div class="form-group">
+		<div class="input-group"> 
+		<span class="input-group-addon">
+			     <i class="fa fa-envelope"></i>
+        </span>  
+		<%= f.email_field :email, class: "form-control" , placeholder: "Email Address" %>
+	</div>
+</div>
+	<div class="form-group">
+		<%= f.submit "Subscribe", class: "btn btn-primary" %>
+	</div>
+<% end %>
