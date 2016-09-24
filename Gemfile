@@ -59,6 +59,7 @@ group :development do
 end
 group :production do
 	gem 'pg'
+	gem 'simple_form', '~> 3.2'
 
 end
 
