@@ -424,7 +424,7 @@ div.float {
 overflow: hidden;
 float: left;
 width: 23%;
-height: 250px;
+height: 200px;
 color: rgb(255, 255, 255);
 margin-top: 20px;
 margin: 4px;
@@ -481,16 +481,16 @@ transform: scale(1.1);
  
   }
   
-div.float p {
+div.float a {
 position: relative;   
 text-align:center;
 background: rgb(0, 0, 0); /* fallback color */
-   background: rgba(0, 0, 0, 0.7);
+   background: rgba(0, 0, 0, 0.5);
    font-weight: bold;
    font-size: 0.9em;
    color:  white;
-   border-radius: 0px;
-   bottom: 2px;
+   border-radius: 3px;
+   bottom: 40px;
    left: 2px;
    margin-top: 100px;
    margin-bottom: 0px;
@@ -539,8 +539,8 @@ width: 40%;
 padding: 8px;
 margin-top: 10px;}
 input[type="submit"]:hover {
-border: 1px solid rgb(128, 100, 162);;
-background-color: rgb(128, 100, 162);;
+border: 1px solid rgb(128, 100, 162);
+background-color: rgb(128, 100, 162);
 color: white;
 cursor: pointer;}
 inner-addon {
@@ -549,21 +549,29 @@ inner-addon {
 div.float h3 {
  
 text-align:center;
-border: 1px solid rgb(128, 100, 162);
 
    font-weight: bold;
    font-size: 0.9em;
    color:  rgb(128, 100, 162);
-   border-radius: 0px;
+   border-radius: 5px;
    bottom: 2px;
    left: 2px;
-   margin-bottom: 0px;
-   padding: 1px;
-  
+   margin-bottom: 10px;
+    position: relative;
+   padding: 5px;
+  margin-top: 20px;
+   }
+ div.float h3:focus,
+   div.float h3:hover {
+    color: orange;
+   
+    
    }
    div.float p:focus,
    div.float p:hover {
     color: orange;
+
+
 
     
    }
