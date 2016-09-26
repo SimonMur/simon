@@ -1,6 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "social-share-button";
+
+$size: 40px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: 40px;
+    height: 40px;
+    width: 40px;
+  }
+}
 
 h1 {
  font-size: 30px;
@@ -571,7 +582,9 @@ text-align:center;
    div.float p:hover {
     color: orange;
 
-
+div.content {
+  color: rgb(128, 100, 162);
+}
 
     
    }
@@ -580,7 +593,8 @@ text-align:center;
 ------------------------------*/
 .support-area{
   padding:30px 0 15px;
-  background:#fff;
+  background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.05);
 }
 .sigle-support-icon{
   float:left;

@@ -21,16 +21,20 @@
  </div>
     </div>
     <div class="col-sm-7">
-	<% @post.tags.each do |tag| %>
+     	<% @post.tags.each do |tag| %>
 	<% end %>
   <h1 style="font-size: 50px;
   color: orange;
   font-family: Impact;
-  font-weight: bold;"><%= @post.title %></h1>
+  font-weight: bold; line-height: 130%;"><%= @post.title %></h1>
  
-  <div><%= raw @post.body %></div>
+  <div style="font-size: 20px; font-family: cabia; letter-spacing: 1.2px;">
+    <%= raw @post.body %>
+
+<%= social_share_button_tag(@post.title) %>
+  </div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
-<div><%= render @post.tags %></div>
+<div>More <%= render @post.tags %> Posts</div>
 <div class="comments"> 
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>

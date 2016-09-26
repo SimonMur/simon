@@ -3,6 +3,7 @@
 <head>
   <title><%= yield(:title) %> | Life Time Community</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta property="og:image" content="url_to_image" />
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= disqus_init :short_name => "simonmuriuki ", :public_key => "public key", :secret_key => "secret_key", :access_token => "access_token" %>
