@@ -4,16 +4,19 @@ development:
   api_key: '819175184846141'
   api_secret: BBisNe71REJzldx6x7ce-_7iVFE
   enhance_image_tag: true
+  secure: true
   static_image_support: false
 production:
   cloud_name: hkc0gq9vt
   api_key: '819175184846141'
   api_secret: BBisNe71REJzldx6x7ce-_7iVFE
   enhance_image_tag: true
+  secure: true
   static_image_support: true
 test:
   cloud_name: hkc0gq9vt
   api_key: '819175184846141'
   api_secret: BBisNe71REJzldx6x7ce-_7iVFE
   enhance_image_tag: true
+  secure: true
   static_image_support: false
