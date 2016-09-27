@@ -40,6 +40,7 @@ gem 'ckeditor', '~> 4.1'
 gem 'meta-tags'
 gem 'friendly_id'
 gem 'simple_form', '~> 3.2'
+gem 'sitemap_generator'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'disqus_rails'
