@@ -9,7 +9,6 @@ default: &default
   encoding: unicode
   host: ec2-184-72-240-189.compute-1.amazonaws.com
   database: d37vtrl256g7nd
-  pool: 5
   port: 5432
   user: eeekyrqvptxtgw
   password:  rhoX7mPKRCGLAIMOacgz2VknWS

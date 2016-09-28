@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta name="google-site-verification" content="1M8xvT62JxADgh7508XjypWcA6yDl5yiuqHNpgMAGQ0" />
-  <title><%= yield(:title) %> | Life Time Community</title>
+ 
+  <title><%= yield(:title) %> | ThiqBT </title>
  <meta name="viewport" content="width=device-width                , initial-scale=1.0" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <meta property="og:image" content="url_to_image" />
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= disqus_init :short_name => "simonmuriuki ", :public_key => "public key", :secret_key => "secret_key", :access_token => "access_token" %>
-</head>
+ </head>
 <body>
 <%=render 'layouts/header'%>
 <div class="container-fluid">
@@ -25,5 +24,7 @@
    
     
 </div>
+ <%= render 'layouts/footer' %>
+
 </body>
 </html>
