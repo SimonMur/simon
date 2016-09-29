@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160923140239) do
+ActiveRecord::Schema.define(version: 20160928132604) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -23,8 +26,8 @@ ActiveRecord::Schema.define(version: 20160923140239) do
     t.integer  "height"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
-    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -33,7 +36,46 @@ ActiveRecord::Schema.define(version: 20160923140239) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+  end
+
+  create_table "commontator_comments", force: :cascade do |t|
+    t.string   "creator_type"
+    t.integer  "creator_id"
+    t.string   "editor_type"
+    t.integer  "editor_id"
+    t.integer  "thread_id",                     null: false
+    t.text     "body",                          null: false
+    t.datetime "deleted_at"
+    t.integer  "cached_votes_up",   default: 0
+    t.integer  "cached_votes_down", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["cached_votes_down"], name: "index_commontator_comments_on_cached_votes_down", using: :btree
+    t.index ["cached_votes_up"], name: "index_commontator_comments_on_cached_votes_up", using: :btree
+    t.index ["creator_id", "creator_type", "thread_id"], name: "index_commontator_comments_on_c_id_and_c_type_and_t_id", using: :btree
+    t.index ["thread_id", "created_at"], name: "index_commontator_comments_on_thread_id_and_created_at", using: :btree
+  end
+
+  create_table "commontator_subscriptions", force: :cascade do |t|
+    t.string   "subscriber_type", null: false
+    t.integer  "subscriber_id",   null: false
+    t.integer  "thread_id",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["subscriber_id", "subscriber_type", "thread_id"], name: "index_commontator_subscriptions_on_s_id_and_s_type_and_t_id", unique: true, using: :btree
+    t.index ["thread_id"], name: "index_commontator_subscriptions_on_thread_id", using: :btree
+  end
+
+  create_table "commontator_threads", force: :cascade do |t|
+    t.string   "commontable_type"
+    t.integer  "commontable_id"
+    t.datetime "closed_at"
+    t.string   "closer_type"
+    t.integer  "closer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true, using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -42,10 +84,10 @@ ActiveRecord::Schema.define(version: 20160923140239) do
     t.string   "sluggable_type", limit: 50
     t.string   "scope"
     t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
   create_table "identities", force: :cascade do |t|
@@ -54,7 +96,7 @@ ActiveRecord::Schema.define(version: 20160923140239) do
     t.string   "uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_identities_on_user_id"
+    t.index ["user_id"], name: "index_identities_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -64,7 +106,7 @@ ActiveRecord::Schema.define(version: 20160923140239) do
     t.datetime "updated_at", null: false
     t.string   "picture"
     t.string   "slug"
-    t.index ["slug"], name: "index_posts_on_slug", unique: true
+    t.index ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
   end
 
   create_table "subscribes", force: :cascade do |t|
@@ -82,21 +124,21 @@ ActiveRecord::Schema.define(version: 20160923140239) do
     t.string   "tagger_type"
     t.string   "context",       limit: 128
     t.datetime "created_at"
-    t.index ["context"], name: "index_taggings_on_context"
-    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-    t.index ["tag_id"], name: "index_taggings_on_tag_id"
-    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
-    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
-    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
-    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
-    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
-    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+    t.index ["context"], name: "index_taggings_on_context", using: :btree
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+    t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy", using: :btree
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id", using: :btree
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type", using: :btree
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type", using: :btree
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id", using: :btree
   end
 
   create_table "tags", force: :cascade do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
+    t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -113,8 +155,8 @@ ActiveRecord::Schema.define(version: 20160923140239) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "visitors", force: :cascade do |t|
@@ -123,7 +165,10 @@ ActiveRecord::Schema.define(version: 20160923140239) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_visitors_on_post_id"
+    t.index ["post_id"], name: "index_visitors_on_post_id", using: :btree
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "identities", "users"
+  add_foreign_key "visitors", "posts"
 end

@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+
 	acts_as_disqusable
 	 has_many :comments
 	 has_many :visitors

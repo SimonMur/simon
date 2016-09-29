@@ -646,7 +646,7 @@ div.content {
   margin-bottom:20px;
 }
 .footer-info-card p{
-  border-bottom: 1px solid  rgb(84, 64, 108);
+  border-bottom: 0px solid  rgb(84, 64, 108);
   line-height: 30px;
   margin-bottom: 40px;
   padding: 0 0 10px;
@@ -660,12 +660,12 @@ div.content {
 }
 .footer-menu-area{
   font-family: "Roboto",arial;
-  border: 2px solid;
-  border-radius: 5px;
+  border: 0px solid;
+  border-radius: 0px;
 }
 .footer-heading{
-  font-weight: 700;
-  margin-bottom: 16px;
+  font-weight: 400;
+  margin-bottom: 5px;
   text-transform: uppercase;
   text-align: center;
   
@@ -680,7 +680,7 @@ div.content {
   text-align: center;
 }
 .footer-menu ul li{
-  border-bottom: 1px solid rgb(255,255,255);
+  border-bottom: 0px solid rgb(255,255,255);
 }
 .footer-menu ul li:last-child{
   border-bottom: none;
@@ -714,12 +714,12 @@ div.content {
 }
 .contact-info-area{
   font-family: "Roboto",arial;
-  border: 2px solid;
-  border-radius: 5px;
+  border:0px solid;
+  border-radius: 0px;
 }
 .contact-info{}
 .contanct-details{
-  border-bottom: 1px solid #fff;
+  border-bottom: 0px solid #fff;
   overflow: hidden;
   padding: 5px 0;
 
@@ -761,7 +761,7 @@ div.content {
 }
 .footer-social-icon a{
   background:  rgb(255, 64, 108) none repeat scroll 0 0;
-  border-radius: 2px;
+  border-radius: 0px;
   color: #fff;
   display: block;
   font-size: 15px;
