@@ -55,7 +55,17 @@
                   <li><a href="/tags/1">Jobs</a>
                     
                   </li>
-                  <li><a href="shop.html">Show Room</a></li>
+                  <div class="container">
+ 
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Show Room</button>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <% render 'showrooms/show1' %>
+    </div>
+  </div>
+                  
                   
                   <li><a href="contact.html"></a></li>
                 </ul>

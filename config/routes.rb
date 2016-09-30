@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+get '/showroom', to: 'showrooms#show1'
 
    mount Ckeditor::Engine => '/ckeditor'
  
