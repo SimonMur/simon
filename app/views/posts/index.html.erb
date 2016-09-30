@@ -27,7 +27,7 @@ frameborder="0" allowFullScreen></iframe>
   font-weight: bold;"> Latest Posts</h1>
    <div class="col-sm-4">
      <% @posts.find(1) do |post| %>
-    <%= cl_image_tag post.picture_url :transformation => [{:height => 300, :width => 200, :crop => "thumb", class: "img-responsive" :secure => true, :radius => 0}] %>
+    <%= cl_image_tag post.picture_url :transformation => [{:height => 300, :width => 200, :crop => "thumb", :secure => true, :radius => 0}] %>
      <p><%= link_to post.title, post_path(post) %></p>
      <%= link_to "Read more.....", post_path(post), class: "btn btn-warning btn-xs" %>
     <% end %>
@@ -38,7 +38,7 @@ frameborder="0" allowFullScreen></iframe>
     
    <div class= 'float'>
    
-         <%= cl_image_tag post.picture_url :transformation => [{:height => 180, :width => 140, class: "img-responsive" :crop => "thumb", :secure => true, :radius => 0}] %>
+         <%= cl_image_tag post.picture_url :transformation => [{:height => 180, :width => 140, :crop => "thumb", :secure => true, :radius => 0}] %>
 
          <h3>
      <%= link_to "Read more.....", post_path(post), class: "btn btn-warning btn-xs" %>
