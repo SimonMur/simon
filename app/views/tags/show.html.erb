@@ -1,2 +1,19 @@
-<h1><%= @tag.name %></h1>
-<div><%= render @posts %></div>
+<% provide(:title, @tag.name ) %>
+<div class="container-fluid">
+
+   <div class="row">
+    <div class= "col-sm-12">
+
+<div class="col-sm-3">  
+    </div>
+     <div class="col-sm-6">  
+
+<h1><%= @tag.name %> articles</h1>
+<%= render @posts %>
+</div>
+  <div class="col-sm-3"> 
+  </div>
+
+</div>
+</div>
+</div>

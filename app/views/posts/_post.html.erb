@@ -1,1 +1,9 @@
-<div><%= render post.tags %></div>
+<table style="width:100%">
+  <tr>
+<td><%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 80, :crop => "thumb", :secure => true, :radius => 0}] %></td>
+
+   
+<td><%= link_to post.title, post_path(post) %></td>
+ </tr>
+</br>
+</table>
