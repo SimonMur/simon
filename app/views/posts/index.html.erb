@@ -79,10 +79,10 @@ frameborder="0" allowFullScreen></iframe>
     
   
    
-        <td> <%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %></td>
+         <%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %>
 
           
-        <td><%= link_to post.title, post_path(post) %></td>
+        <p><%= link_to post.title, post_path(post) %></p>
  
       </br>
         
