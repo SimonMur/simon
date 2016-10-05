@@ -5,7 +5,7 @@
    <div class="row">
     <div class= "col-sm-12">
       
-    </div>
+    
     <div class="col-sm-3">  
   <%=render 'layouts/ad1'%>
     
@@ -27,9 +27,21 @@ frameborder="0" allowFullScreen></iframe>
   font-weight: bold;"> Latest Posts</h1>
    <div class="col-sm-4">
      <% @posts.find(1) do |post| %>
-    <%= cl_image_tag post.picture_url :transformation => [{:height => 300, :width => 200, :crop => "thumb", :secure => true, :radius => 0}] %>
+    <%= cl_image_tag post.picture_url :transformation => [{:height => 300, :width => 180, :crop => "thumb", :secure => true, :radius => 0}] %>
      <p><%= link_to post.title, post_path(post) %></p>
      <%= link_to "Read more.....", post_path(post), class: "btn btn-warning btn-xs" %>
+     <h2>Rating</h2>
+    <div class="best-product-rating">
+                      <a href="#"><i class="fa fa-star"></i></a>
+                      <a href="#"><i class="fa fa-star"></i></a>
+                      <a href="#"><i class="fa fa-star"></i></a>
+                      <a href="#"><i class="fa fa-star"></i></a>
+                      <a href="#"><i class="fa fa-star"></i></a>
+                    </div>
+                     <p class="timestamp" style="color:rgba(0, 0, 0, 0.5); font-size: 9px;">
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </p>
+
     <% end %>
    </div>
     <div class="col-sm-8">
@@ -38,7 +50,7 @@ frameborder="0" allowFullScreen></iframe>
     
    <div class= 'float'>
    
-         <%= cl_image_tag post.picture_url :transformation => [{:height => 180, :width => 140, :crop => "thumb", :secure => true, :radius => 0}] %>
+         <%= cl_image_tag post.picture_url :transformation => [{:height => 180, :width => 170, :crop => "thumb", :secure => true, :radius => 0}] %>
 
          <h3>
      <%= link_to "Read more.....", post_path(post), class: "btn btn-warning btn-xs" %>
@@ -48,7 +60,7 @@ frameborder="0" allowFullScreen></iframe>
     
         <p><%= link_to post.title, post_path(post) %></p>
  
-     
+      
         </div>
 
   
@@ -57,11 +69,25 @@ frameborder="0" allowFullScreen></iframe>
      
 
     </div>
-     <iframe title="YouTube video player" class="youtube-player" type="text/html" 
-width="640" height="390" src="https://www.youtube.com/embed/P1aj30OtMwc"
-frameborder="0" allowFullScreen></iframe>
+    
 </div>
-    <div class="col-sm-3">  
+    <div class="col-sm-3">
+      <h2>Other Articles you may like</h2>
+     <% @posts.each do |post| %>
+    
+  
+   
+         <%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %>
+
+          
+        <p><%= link_to post.title, post_path(post) %></p>
+ 
+      </br>
+        
+
+  
+
+    <% end %>  
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- brainrupture -->
 <ins class="adsbygoogle"
@@ -72,6 +98,8 @@ frameborder="0" allowFullScreen></iframe>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
+    
 </div>
 
-     
+     </div>
