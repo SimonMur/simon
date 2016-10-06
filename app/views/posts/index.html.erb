@@ -29,7 +29,7 @@ frameborder="0" allowFullScreen></iframe>
   font-weight: bold;"> Latest Posts</h1>
    <div class="col-sm-4">
      <% @posts.find(1) do |post| %>
-    <%= cl_image_tag post.picture_url :transformation => [{:height => 300, :width => 180, :crop => "thumb", :secure => true, :radius => 0}] %>
+    <%= cl_image_tag post.picture_url :transformation => [{:height => 250, :width => 200, :crop => "thumb", :secure => true, :radius => 0}] %>
      <p><%= link_to post.title, post_path(post) %></p>
      <%= link_to "Read more.....", post_path(post), class: "btn btn-warning btn-xs" %>
      <h2>Rating</h2>

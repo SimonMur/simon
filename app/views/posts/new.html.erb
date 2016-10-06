@@ -1,6 +1,19 @@
 <% provide(:title, "New Post") %>
+<div class="container">
 
+   <div class="row">
+    <div class= "col-sm-12">
+      
+    
+    <div class="col-sm-8">  
 <h2>Create New Post</h2>
-<div class="col-xs-4">
+<h3>
+     <%= link_to "Manage Posts", admineditposts_path, class: "btn btn-success " %>
+
+     </h3>
+<div class="col-xs-6">
 <%= render "posts/form" %>
+</div>
+</div>
+</div>
 </div>

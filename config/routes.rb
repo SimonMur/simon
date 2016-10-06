@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-get '/showroom', to: 'showrooms#show1'
+get '/admineditposts', to: 'posts#admin_index'
 
    mount Ckeditor::Engine => '/ckeditor'
  

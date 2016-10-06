@@ -11,6 +11,14 @@ class PostsController < ApplicationController
      end
  end
 
+ def admin_index  
+     if params[:tag]
+       @posts = Post.tagged_with(params[:tag])
+     else
+      @posts = Post.all.paginate(page: params[:page], per_page: 20)
+     end
+ end
+
 	# New action for creating post
 	def new
 		@post = Post.new
@@ -36,7 +44,7 @@ class PostsController < ApplicationController
 	def update
 		if @post.update_attributes(post_params)
 			flash[:notice] = "Successfully updated post!"
-			redirect_to post_path(@posts)
+			redirect_to post_path
 		else
 			flash[:alert] = "Error updating post!"
 			render :edit
@@ -49,12 +57,11 @@ class PostsController < ApplicationController
 
 	# The destroy action removes the post permanently from the database
 	def destroy
-		if @post.destroy
+		@post= Post.friendly.find(params[:id])
+		@post.destroy
 			flash[:notice] = "Successfully deleted post!"
-			redirect_to posts_path
-		else
-			flash[:alert] = "Error updating post!"
-		end
+			redirect_to allposts_path
+		
 	end
 
 	private
