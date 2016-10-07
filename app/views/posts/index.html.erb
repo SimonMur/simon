@@ -74,22 +74,23 @@ frameborder="0" allowFullScreen></iframe>
     
 </div>
     <div class="col-sm-3">
-      <h3>All articles</h3>
+      <h4>Other articles you may like</h4>
+
      <% @posts.each do |post| %>
     
-  
-   
-         <%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %>
+  <table style="width:100%; color: black;">
+    <tr>
+         <td><%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %></dt>
 
           
-        <p><%= link_to post.title, post_path(post) %></p>
- 
-      </br>
-        
-
+        <td><%= link_to post.title, post_path(post) %></td>
+ </tr>
+   </table>   
+<hr /> 
   
 
-    <% end %>  
+    <% end %> 
+
     <%= will_paginate @posts %>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- brainrupture -->
