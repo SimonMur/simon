@@ -9,8 +9,7 @@ class PostsController < ApplicationController
      else
       @posts = Post.all.paginate(page: params[:page], per_page: 10)
      end
-      prepare_meta_tags title: "Home", description: "all posts from thinqbt"
- end
+      end
 
  def admin_index  
      if params[:tag]
