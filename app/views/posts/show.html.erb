@@ -33,7 +33,7 @@
   <div style="font-size: 20px; font-family: cabia; letter-spacing: 1.2px;">
     <%= raw @post.body %>
 
-<%= social_share_button_tag(@post.title, @post.picture_url) %>
+<%= social_share_button_tag(@post.title) %>
   </div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
 <div>More <%= render @post.tags %> Posts</div>
