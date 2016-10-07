@@ -9,6 +9,7 @@ class PostsController < ApplicationController
      else
       @posts = Post.all.paginate(page: params[:page], per_page: 10)
      end
+      prepare_meta_tags title: "Home", description: "all posts from thinqbt"
  end
 
  def admin_index  
@@ -53,6 +54,8 @@ class PostsController < ApplicationController
 
 	# The show action renders the individual post after retrieving the the id
 	def show
+		 @page_title       = @post.title
+    	 @page_keywords    = @post.keywords
 	end
 
 	# The destroy action removes the post permanently from the database
@@ -67,7 +70,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :picture, :body, :tag_list)
+		params.require(:post).permit(:title, :picture, :keywords, :body, :tag_list)
 	end
 
 	def find_post
