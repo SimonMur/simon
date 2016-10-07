@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def prepare_meta_tags(options={})
     site_name   = "ThinqBT"
-    title       = [controller_name, action_name].join(" ")
+    title       = [@post.title].join(" ")
     description = "Job posts, health posts, entertainment, celebrity news, Technology news and update"
     image       = options[:image] || "your-default-image-url"
     current_url = request.url
