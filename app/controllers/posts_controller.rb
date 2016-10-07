@@ -54,9 +54,7 @@ class PostsController < ApplicationController
 
 	# The show action renders the individual post after retrieving the the id
 	def show
-		 @page_title       = @post.title
-    	 @page_keywords    = @post.keywords
-    	 
+		 
 	end
 
 	# The destroy action removes the post permanently from the database
