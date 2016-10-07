@@ -26,7 +26,14 @@ class ApplicationController < ActionController::Base
         description: description,
         image: image
       },
-      
+      og: {
+        url: current_url,
+        site_name: site_name,
+        title: title,
+        image: image,
+        description: description,
+        type: 'website'
+      }
     }
 
     options.reverse_merge!(defaults)
