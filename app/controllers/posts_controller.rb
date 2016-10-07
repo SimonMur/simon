@@ -56,7 +56,7 @@ class PostsController < ApplicationController
 	def show
 		 @page_title       = @post.title
     	 @page_keywords    = @post.keywords
-    	 @page_description = @post.body
+    	 
 	end
 
 	# The destroy action removes the post permanently from the database
