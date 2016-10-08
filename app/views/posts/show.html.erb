@@ -2,7 +2,18 @@
 <% provide(:description, @post.body ) %>
 <% provide(:keywords, @post.keywords ) %>
 <% provide(:picture, @post.picture_url ) %>
-
+<% content_for :head do %>
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="<%=  @post.title %>" />
+    <meta property="og:type" content="post" />
+    <meta property="og:url" content="<%= post_url(@post) %>" />
+    <meta property="og:description" content="<%= @post.body %>" />
+      <meta property="og:image" content="<%= @post.picture_url %>" />
+    <meta property="fb:app_id" content="12345678" />
+    <!-- Twitter card property -->
+    <meta name="twitter:card" content="<%= @post.title %>">
+    <meta name="twitter:site" content="@thinqbt">
+  <% end %> 
  <div class="container-fluid">
 
    <div class="row">
