@@ -6,15 +6,15 @@
     var popunder_frequency_delay = 5;
 </script>
 <script src="https://cdn.adf.ly/js/display.js"></script> 
-  <meta name="verify-admitad" content="45d541b09d" />
- <script type='text/javascript' src='//go.pub2srv.com/apu.php?zoneid=522748'></script>
-  <title><%= yield(:title) %> | ThiqBT </title>
+ 
+ 
+  <title><%= yield(:title) %> | ThinqBT </title>
  <meta content="<%= yield (:body) %>" name="description">
  <meta content="online jobs tips, entertainment news, health and healthy living, sports, new in technology, thinqbt, think big time, TBT, thinqbt.com " name="keywords">
  <meta name="viewport" content="width=device-width                , initial-scale=1.0" />
  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <meta property="og:image" content="url_to_image" />
+  <meta property="og:image" content="<%= yield(:picture) %>" />
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
