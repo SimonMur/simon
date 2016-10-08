@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+ <html lang="en">
 <head>
+
  <script type="text/javascript">
     var adfly_id = 14760201;
     var popunder_frequency_delay = 2;
@@ -9,7 +10,9 @@
  
  
   <title><%= yield(:title) %> | ThinqBT </title>
- <meta content="<%= yield (:description) %>" name="description">
+  <%= yield(:content_for) %>
+  <meta http-equiv="Content-Language" content="en">
+<meta name="description" content="<%= yield(:meta_description) %>" />
  <meta content="online jobs tips, entertainment news, health and healthy living, sports, new in technology, thinqbt, think big time, TBT, thinqbt.com " name="keywords">
  <meta name="viewport" content="width=device-width                , initial-scale=1.0" />
  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
