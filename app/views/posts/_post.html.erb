@@ -6,7 +6,11 @@
          <td><%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %></td>
 
 
-        <p><td><%= link_to post.title, post_path(post) %></td></p>
+
+        <p><td><%= link_to post.title, post_path(post) %>
+
+        <p style='font-size: 10px; color: grey;'>Posted <%= time_ago_in_words(post.created_at) %> ago.</p>
+        </td></p>
     
 
  </tr>
