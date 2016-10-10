@@ -8,7 +8,16 @@
     
     <div class="col-sm-3">  
   <%=render 'layouts/ad1'%>
-    
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- brainrupture -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9075062478131160"
+     data-ad-slot="2486469730"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     </div>
     <div class="col-sm-6" >
   <%=render 'layouts/carousel'%>
@@ -74,36 +83,8 @@ frameborder="0" allowFullScreen></iframe>
     
 </div>
     <div class="col-sm-3">
-      <h4>Other articles you may like</h4>
-     <% @posts.each do |post| %>
+     <%= render @posts %>
   
-  <table style="width:100%; color: black;">
-    <tr>
-         <td><%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %></dt>
-
-
-        <p><td><%= link_to post.title, post_path(post) %></td></p>
-    
-
- </tr>
-   </table>   
-<hr /> 
-  
-    <% end %> 
-
-    <%= will_paginate @posts %>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- brainrupture -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9075062478131160"
-     data-ad-slot="2486469730"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-    
 </div>
 
      </div>

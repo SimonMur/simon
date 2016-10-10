@@ -53,7 +53,7 @@ class PostsController < ApplicationController
 
 	# The show action renders the individual post after retrieving the the id
 	def show
-		 
+		 @posts = Post.all.paginate(page: params[:page], per_page: 10) 
 	end
 
 	# The destroy action removes the post permanently from the database
