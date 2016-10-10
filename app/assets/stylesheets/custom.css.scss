@@ -13,6 +13,9 @@ $size: 40px;
   }
 }
 
+hr{
+  color: rgb(128, 100, 162);
+}
 h1 {
  font-size: 30px;
   color: rgb(37, 28, 48); 
@@ -499,7 +502,7 @@ background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.5);
    font-weight: bold;
    font-size: 0.9em;
-   color:  white;
+   color: rgb(128, 100, 162);
    border-radius: 3px;
    bottom: 40px;
    left: 2px;
@@ -563,7 +566,7 @@ text-align:center;
 
    font-weight: bold;
    font-size: 0.9em;
-   color:  rgb(128, 100, 162);
+   color: rgb(128, 100, 162);
    border-radius: 10px;
    bottom: 2px;
    left: 2px;
@@ -612,6 +615,7 @@ div.content {
 .sigle-support-content h2{
   font-size:16px;
   color: rgb(255, 153, 0);
+  font-weight: bold;
   margin-bottom:10px;
 }
 .sigle-support-content p{
@@ -630,6 +634,10 @@ div.content {
   font-weight: bold;
   left: 150px;
   top: 350px;
+}
+.support-area a{
+  color: rgb(128, 100, 162);
+  font-weight: bold;
 }
 /* ----------------------------
 7. Footer Area
@@ -785,8 +793,14 @@ div.content {
   position: fixed;
   right: 20px;
 }
-table li{
-color: black;
+table a{
+color: rgb(128, 100, 162);
+font-weight: bold;
+  
+}
+table a:focus,
+table a:hover{
+color: rgb(255, 153, 0);;
 font-weight: bold;
   
 }

@@ -10,7 +10,7 @@
   <%=render 'layouts/ad1'%>
     
     </div>
-    <div class="col-sm-6" style='background-color: rgba(0, 0, 0 ,0.03)'>
+    <div class="col-sm-6" >
   <%=render 'layouts/carousel'%>
  <h1 style="font-size: 40px;
   color: orange;
@@ -65,7 +65,7 @@ frameborder="0" allowFullScreen></iframe>
       
         </div>
 
-  
+  <hr /> 
 
     <% end %>
      
@@ -75,20 +75,20 @@ frameborder="0" allowFullScreen></iframe>
 </div>
     <div class="col-sm-3">
       <h4>Other articles you may like</h4>
-
      <% @posts.each do |post| %>
-    
+  
   <table style="width:100%; color: black;">
     <tr>
          <td><%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %></dt>
 
-          
-        <td><%= link_to post.title, post_path(post) %></td>
+
+        <p><td><%= link_to post.title, post_path(post) %></td></p>
+    
+
  </tr>
    </table>   
 <hr /> 
   
-
     <% end %> 
 
     <%= will_paginate @posts %>
