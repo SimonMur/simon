@@ -21,10 +21,10 @@
     </div>
     <div class="col-sm-6" >
   <%=render 'layouts/carousel'%>
- <h1 style="font-size: 40px;
+ <h1 style="font-size: 30px; text-align: center;
   color: rgb(128, 100, 162);
   font-family: Times New Roman, Georgia, Serif;
-  font-weight: bold;"> Sumsung vs iPhone</h1>
+  font-weight: bold;">Trending Video</h1>
   <div class='video'>
     <div class="embed-responsive embed-responsive-16by9">
   <iframe title="YouTube video player" class="embed-responsive-item" class="youtube-player" type="text/html" 
@@ -32,10 +32,10 @@ width="640" height="390" src="https://www.youtube.com/embed/yWYHHNADK04"
 frameborder="0" allowFullScreen></iframe>
 </div>
 </div>
-<h1 style="font-size: 40px;
-  color: orange;
+<h1 style="font-size: 30px; text-align: center;
+  color: rgb(128, 100, 162);
   font-family: Times New Roman, Georgia, Serif;
-  font-weight: bold;"> Latest Posts</h1>
+  font-weight: bold;"> Trending topic</h1>
  
      <% @posts.find(1) do |post| %>
       <table >
@@ -66,7 +66,10 @@ frameborder="0" allowFullScreen></iframe>
  <hr />
     <% end %>
   
- 
+<h1 style="font-size: 30px;text-align: center;
+  color: rgb(128, 100, 162);
+  font-family: Times New Roman, Georgia, Serif;
+  font-weight: bold;">Hot posts</h1>
 
      <% @posts.find_each(start: 6, finish: 9) do |post| %>
   
