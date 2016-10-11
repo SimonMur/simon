@@ -3,7 +3,7 @@
   
   <table style="width:100%; color: black;">
     <tr>
-         <td><%= cl_image_tag post.picture_url :transformation => [{:height => 80, :width => 150, :crop => "thumb", :secure => true, :radius => 0}] %></td>
+         <td><%= cl_image_tag post.picture_url :transformation => [{:height => 100, :width => 180, :crop => "thumb", :secure => true, :radius => 0}] %></td>
 
 
 
@@ -11,7 +11,7 @@
 
         <p style='font-size: 10px; color: grey;'>Posted <%= time_ago_in_words(post.created_at) %> ago.</p>
         </td></p>
-    
+   
 
  </tr>
    </table>   
