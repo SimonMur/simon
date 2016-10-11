@@ -15,13 +15,16 @@
   <% end %>
 
 	<div class="form-group">
-		<%= f.input :title, class: "form-control" %>
+		<%= f.input :title,  placeholder:"Post title" %>
 	</div>
   <div class="form-group">
-    <%= f.text_field :tag_list, class: "form-control" %>
+    <%= f.text_field :tag_list,  placeholder:"Post Category" %>
   </div>
 <div class="form-group">
-    <%= f.text_field :keywords, class: "form-control" %>
+    <%= f.text_field :keywords,  placeholder:"Keywords" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :description,  placeholder:"Post Description" %>
   </div>
   <span class="picture">
     Add Thumb Picture

@@ -1,5 +1,5 @@
 module ApplicationHelper
-	def meta_description(post_text)
-  content_for(:meta_description) { post_text }
+	def meta_description(description_text)
+  content_for(:meta_description) { description_text }
 end
 end

@@ -2,7 +2,7 @@
 <% provide(:description, @post.body ) %>
 <% provide(:keywords, @post.keywords ) %>
 <% provide(:picture, @post.picture_url ) %>
-<% meta_description @post.body.truncate(150, separator: ' ') %>
+<% meta_description @post.description %>
 <% content_for :head do %>
     <!-- Open Graph tags -->
     <meta property="og:title" content="<%=  @post.title %>" />
@@ -81,3 +81,4 @@ var disqus_config = function () {
   
 </div>
  </div>
+ 
