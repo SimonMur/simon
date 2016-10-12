@@ -27,7 +27,7 @@ frameborder="0" allowFullScreen></iframe>
      <% @posts.find(1) do |post| %>
       <table >
     <tr>
-   <td> <%= cl_image_tag post.picture_url :transformation => [{:height => 200, :width => 350, :crop => "thumb", :responsive_placeholder => "blank", :secure => true, :radius => 0}] %></td>
+   <td> <%= cl_image_tag post.picture_url :transformation => [{:height => 200, :width => 350, :crop => "thumb", :class=>"img-responsive", :class=>"cld-responsive", :secure => true, :radius => 0}]%></td>
      <td><%= link_to post.title, post_path(post) %>
       <p><%=  post.description %><p></td>
    <td>
@@ -62,7 +62,7 @@ frameborder="0" allowFullScreen></iframe>
   
     <table >
     <tr>
-        <td> <%= cl_image_tag post.picture_url :transformation => [{:height => 120, :width => 110, :crop => "thumb", :secure => true, :class=>"img-responsive", :radius => 0}] %></td>
+        <td> <%= cl_image_tag post.picture_url :transformation => [{:height => 120, :width => 110, :crop => "thumb", :class => "cld-responsive", :secure => true, :class=>"img-responsive", :radius => 0}]%></td>
     
        <td> <%= link_to post.title, post_path(post) %>
         <p><%=  post.description %><p>
