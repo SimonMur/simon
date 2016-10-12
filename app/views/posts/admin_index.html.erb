@@ -15,22 +15,29 @@
       <% @posts.each do |post| %>
    
     
-   <div class= 'float'>
-   
-         <%= cl_image_tag post.picture_url :transformation => [{:height => 180, :width => 170, :crop => "thumb", :secure => true, :radius => 0}] %>
-<h3> <%= link_to 'Destroy', post, class: "btn btn-danger btn-xs", :method => :delete, :confirm => "Are you sure?" %>
-     <%= link_to "Edit Post", edit_post_path(post), class: "btn btn-success btn-xs" %>
+    <table style="width:100%; color: black;">
+    <tr>
+   <td>
+         <%= cl_image_tag post.picture_url :transformation => [{:height => 180, :width => 170, :crop => "thumb", :secure => true, :radius => 0}] %> </td>
+<td>
+ <p><%= link_to post.title, post_path(post) %></p>
+</td>
+<td>
+  <%= link_to "Edit Post", edit_post_path(post), class: "btn btn-success btn-xs" %>
+  <hr />
+    
  
-     </h3>
-
+      <%= link_to 'Destroy', post, class: "btn btn-danger btn-xs", :method => :delete, :confirm => "Are you sure?" %>
 
     
-        <p><%= link_to post.title, post_path(post) %></p>
-
+       
+</td>
       
-        </div>
+      
   
-
+</tr>
+   </table>  
+   <hr />
     <% end %>
       <%= will_paginate @posts %>
    </div>
