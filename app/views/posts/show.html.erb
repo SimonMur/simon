@@ -51,8 +51,8 @@
  
   <div style="font-size: 20px; font-family: cabia; letter-spacing: 1.2px;">
     <%= raw @post.body %>
-
-<%= social_share_button_tag(@post.title) %> <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<% breadcrumb :post, @post %>
+<%= social_share_button_tag(@post.title) %> 
   </div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
 <div>More <%= render @post.tags %> Posts</div>

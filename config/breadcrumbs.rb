@@ -5,6 +5,7 @@ end
 crumb :post do |post|
   link post.title, post
   parent :posts
+end
 
 # crumb :project do |project|
 #   link project.name, project_path(project)
