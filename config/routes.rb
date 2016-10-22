@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 get '/admineditposts', to: 'posts#admin_index'
-get 'p/:slug', slug: /[a-z-]+\w+/i, to: 'posts#show', as: :post
+
    mount Ckeditor::Engine => '/ckeditor'
  
   root to: "posts#index"
