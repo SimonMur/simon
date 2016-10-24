@@ -1,11 +1,11 @@
 <script type="application/ld+json">
 {
-  "@context": "http:thinqbt.com",
-  "@type": "@post.title",
-  "name": "@post.title",
+  "@context": "http://thinqbt.com",
+  "@post": "title",
+  "title": "@post.title",
   "description": "@post.decription",
   "provider": {
-    "@type": "@post.title",
+    "@type": "Organization",
     "name": "ThinqBT",
     "sameAs": "http://thinqbt.com"
   }
@@ -22,7 +22,7 @@
     <meta property="og:title" content="<%=  @post.title %>" />
     <meta property="og:type" content="post" />
     <meta property="og:url" content="<%= post_url(@post) %>" />
-    <meta property="og:description" content="<%= @post.description %>" />
+    <meta property="og:description" content="<%= @post.body %>" />
       <meta property="og:image" content="<%= @post.picture_url %>" />
     <meta property="fb:app_id" content="12345678" />
     <!-- Twitter card property -->
