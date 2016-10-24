@@ -14,6 +14,7 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <meta property="og:image" content="<%= yield(:picture) %>" />
+   <meta property="twitter:image" content="<%= yield(:picture) %>" />
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <!--[if lt IE 9]>
