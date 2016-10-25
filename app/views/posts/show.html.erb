@@ -1,16 +1,13 @@
-<script type="application/ld+json">
-{
-  "@context": "http://thinqbt.com",
-  "@type": "posts",
+
+<%= structured_data_tag({ '@context' => 'http://schema.org'
+                           "@type": "posts",
   "title": "@post.title",
   "description": "@post.description",
   "provider": {
     "@type": "@post.title",
     "name": "ThinqBT",
     "sameAs": "http://thinqbt.com"
-  }
-}
-</script>
+  }  }) %>
 <% provide(:title, @post.title ) %>
 <% breadcrumb :post, @post %>
 <% provide(:description, @post.body ) %>
