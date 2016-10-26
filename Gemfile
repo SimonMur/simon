@@ -15,7 +15,7 @@ gem 'fog'
 gem 'mailboxer'
 gem 'social-share-button'
 gem 'rack-cache'
-
+gem 'metamagic'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

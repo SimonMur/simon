@@ -12,7 +12,12 @@
 
 </script>
   <title><%= yield(:title) %> | ThinqBT </title>
-  <%= yield(:content_for) %>
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@thinqbt">
+<meta name="twitter:creator" content="@thinqbt">
+<meta name="twitter:title" content="<%= yield(:title) %>">
+<meta name="twitter:description" content="<%= yield(:meta_description) %>">
+<meta name="twitter:image" content="<%= yield(:picture) %>">
   <link rel="dns-prefetch" href="http://cdn.thinqbt.com">
   <link rel="dns-prefetch" href="http://www.google-analytics.com">
   <meta name="twitter:image" content="<%= yield(:picture) %>">
@@ -30,6 +35,11 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
   </script>
 <![endif]-->
+<%
+  twitter site: '@thinqbt'
+         
+%>
+<%= metamagic %>
  </head>
  <meta name="google-site-verification" content="DXKc1SoVxzgkj2ZbdIGDm87huqq92muwgBHb8PNOlHo" />
 <body>
