@@ -47,7 +47,9 @@ twitter card: 'summary_large_image',
   <div style="font-size: 20px; font-family: cabia; letter-spacing: 1.2px;">
     <%= raw @post.body %>
 <% breadcrumb :post, @post %>
-<%= social_share_button_tag(@post.title) %> <li class="btn-social"><a class="js-social-share twitter" href="https://twitter.com/intent/tweet?text=“<%= yield :title %>”&url=<%= yield :url %>&via=twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+<%= social_share_button_tag(@post.title) %> <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5810a9d2a7ab52a8"></script>
+
   </div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
 <div>More <%= render @post.tags %> Posts</div>
