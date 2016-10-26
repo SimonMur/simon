@@ -48,7 +48,8 @@ twitter card: 'summary_large_image',
     <%= raw @post.body %>
 <% breadcrumb :post, @post %>
 <%= social_share_button_tag(@post.title) %> <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5810a9d2a7ab52a8"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox_p0h3"></div>
 
   </div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
