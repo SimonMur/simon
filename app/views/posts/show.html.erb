@@ -47,7 +47,7 @@ twitter card: 'summary_large_image',
   <div style="font-size: 20px; font-family: cabia; letter-spacing: 1.2px;">
     <%= raw @post.body %>
 <% breadcrumb :post, @post %>
-<%= social_share_button_tag(@post.title) %> 
+<%= social_share_button_tag(@post.title) %> <li class="btn-social"><a class="js-social-share twitter" href="https://twitter.com/intent/tweet?text=“<%= yield :title %>”&url=<%= yield :url %>&via=twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
   </div>
    <h5><%= @post.created_at.strftime('%b %d, %Y') %></h5>
 <div>More <%= render @post.tags %> Posts</div>
