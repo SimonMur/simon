@@ -15,11 +15,13 @@
       <meta property="og:image" content="<%= @post.picture_url %>" />
     <meta property="fb:app_id" content="12345678" />
     <!-- Twitter card property -->
-    <meta name="twitter:card" content="<%= @post.title %>">
-    <meta name="twitter:site" content="@thinqbt">
-    <meta name="twitter:image" content="<%= @post.picture_url %>">
-    <meta name="twitter:title" content="<%= @post.title %>">
-    <meta name="twitter:description" content="<%= @post.description %>">
+    <%
+twitter card: 'summary_large_image',
+          description: post.description,
+          image: post.latest_issue..image_url,
+          title: post.title,
+         
+%>
   <% end %> 
  <div class="container-fluid">
 
