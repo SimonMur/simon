@@ -7,8 +7,8 @@ crumb :post do |post|
   parent :posts
 end
 crumb :post do |post|
-  link post.title, post
-  parent post.tag # inferred to :category
+  link post.title, post_path(post)
+  parent :posts 
 end
 # crumb :project do |project|
 #   link project.name, project_path(project)

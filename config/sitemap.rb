@@ -2,12 +2,12 @@
 SitemapGenerator::Sitemap.default_host = "http://thinqbt.com"
 
 SitemapGenerator::Sitemap.create do
-  add '/posts', :changefreq => 'daily', :priority => 1
+  add '/posts', :lastmod =>DateTime.now, :changefreq => 'daily', :priority => 1
   add '/subscribe', :changefreq => 'daily'
   add '/contact', :changefreq => 'weekly'
-  add posts_path, changefreq: 'always', :priority => 1
+  add posts_path, changefreq: 'always', :priority => 0.8
    Post.find_each do |post|
-    add post_path(post.slug), lastmod: post.updated_at
+    add post_path(post.slug), lastmod: post.updated_at, :changefreq => 'daily', :priority => 0.9
   end
 
   # Put links creation logic here.
