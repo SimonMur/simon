@@ -1,13 +1,11 @@
 <% provide(:title, "Home") %>
 
-<div class="container-fluid">
-
    <div class="row">
-    <div class= "col-sm-12">
-      
+   <div class="col-sm-12 col-md-12 col-lg-12">
+       <%= render 'layouts/carousel' %>
 
-    <div class="col-sm-8" >
-  <%=render 'layouts/carousel'%>
+    <div class="col-sm-8 col-md-8 col-lg-8">
+
  <h1 style="font-size: 30px; text-align: center;
   color: rgb(128, 100, 162);
   font-family: Times New Roman, Georgia, Serif;
@@ -19,71 +17,110 @@ width="640" height="390" src="https://www.youtube.com/embed/yWYHHNADK04"
 frameborder="0" allowFullScreen></iframe>
 </div>
 </div>
-<h1 style="font-size: 30px; text-align: center;
-  color: rgb(128, 100, 162);
-  font-family: Times New Roman, Georgia, Serif;
-  font-weight: bold;"> Trending topic</h1>
- 
-     <% @posts.find(1) do |post| %>
-      <table >
-    <tr>
-   <td> <%= cl_image_tag post.picture_url :transformation => [{:height => 200, :width => 350, :crop => "thumb", :class=>"img-responsive", :class=>"cld-responsive", :secure => true, :radius => 0}]%></td>
-     <td><%= link_to post.title, post_path(post) %>
-      <p><%=  post.description %><p></td>
-   <td>
-    
-     <h4>Rated</h4>
-    <div class="best-product-rating">
-                      <a href="#"><i class="fa fa-star"></i></a>
-                      <a href="#"><i class="fa fa-star"></i></a>
-                      <a href="#"><i class="fa fa-star"></i></a>
-                      <a href="#"><i class="fa fa-star"></i></a>
-                      <a href="#"><i class="fa fa-star"></i></a>
-                    </div>
-                    <hr />
-                     <%= link_to "Read more.....", post_path(post), class: "btn btn-warning btn-xs" %>
-                     <hr>
-                     <p class="timestamp" style="color:rgba(0, 0, 0, 0.5); font-size: 9px;">
 
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
-  </p>
-</td>
-</tr>
-   </table> 
- <hr />
-    <% end %>
-  
-<h1 style="font-size: 30px;text-align: center;
-  color: rgb(128, 100, 162);
-  font-family: Times New Roman, Georgia, Serif;
-  font-weight: bold;">Hot posts</h1>
-
-     <% @posts.find_each(start: 6, finish: 9) do |post| %>
-  
-    <table >
-    <tr>
-        <td> <%= cl_image_tag post.picture_url :transformation => [{:height => 120, :width => 110, :crop => "thumb", :class => "cld-responsive", :secure => true, :class=>"img-responsive", :radius => 0}]%></td>
-    
-       <td> <%= link_to post.title, post_path(post) %>
-        <p><%=  post.description %><p>
-           <%= link_to "Read more.....", post_path(post), class: "btn btn-warning btn-xs" %>
-           <p class="timestamp" style="color:rgba(0, 0, 0, 0.5); font-size: 9px;">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
-  </p>
-       </td>
- 
-      
-       
-  </tr>
-   </table> 
- <hr />
-
-    <% end %>
-     
-
-   
+  <hr>
+ <section class="publicaciones-blog-home">
+      <div class="container-fluid">
+        <div class="">
+          <h2>Posts and <b>Services</b></h2>
+          <div class="row-page row">
+            <div class="col-page col-sm-8 col-md-6">
+              <a href="" class="black fondo-publicacion-home">
+                <div class="img-publicacion-principal-home">
+                  <img class="" src= "http://res.cloudinary.com/hkc0gq9vt/image/upload/h_200,w_400/v1478779382/web_development_ixucon.jpg">
+                  
+                </div>
+                <div class="contenido-publicacion-principal-home">
+                  <h3>Get you web developed</h3>
+                  <p>Best web developers<span>...</span></p>
+                </div>
+                <div class="mascara-enlace-blog-home">
+                  <span>Our Services </span>
+                </div>
+              </a>
+            </div>
+            <div class="col-page col-sm-4 col-md-3">
+              <a href=""  class="fondo-publicacion-home">
+                <div class="img-publicacion-home">
+                  <img class="img-responsive" src="http://res.cloudinary.com/hkc0gq9vt/image/upload/h_300,w_500/v1474644476/football.jpg">
+                </div>
+                <div class="contenido-publicacion-home">
+                  <h3>Sports News and Update</h3>
+                  <p>News form accross the globe, the best way to get informed...<span>...</span></p>
+                </div>
+                <div class="mascara-enlace-blog-home">
+                  <span>Go to Sports </span>
+                </div>
+              </a>
+            </div>
+            <div class="col-page col-sm-4 col-md-3">
+              <a href="" class="fondo-publicacion-home">
+                <div class="img-publicacion-home">
+                  <img class="img-responsive" src="http://res.cloudinary.com/hkc0gq9vt/image/upload/h_300,w_500/v1474876507/health.jpg">
+                </div>
+                <div class="contenido-publicacion-home">
+                  <h3>Health News and Updates</h3>
+                  <p>Stay healthy with the latest health news and updates...<span>...</span></p>
+                </div>
+                <div class="mascara-enlace-blog-home">
+                  <span>Go to health </span>
+                </div>
+              </a>
+            </div>
+            <div class="col-page col-sm-4 col-md-3">
+              <a href="" class="fondo-publicacion-home">
+                <div class="img-publicacion-home">
+                  <img class="img-responsive" src="http://res.cloudinary.com/hkc0gq9vt/image/upload/h_300,w_500/v1478781983/trump_gnq58l.jpg">
+                </div>
+                <div class="contenido-publicacion-home">
+                  <h3>Politics, news and updates</h3>
+                  <p>Know the political news instantly<span>...</span></p>
+                </div>
+                <div class="mascara-enlace-blog-home">
+                  <span>Go to politics </span>
+                </div>
+              </a>
+            </div>
+            <div class="hidden-sm col-page col-sm-4 col-md-3">
+              <a href="" class="fondo-publicacion-home">
+                <div class="img-publicacion-home">
+                  <img class="img-responsive" src="http://res.cloudinary.com/hkc0gq9vt/image/upload/h_300,w_500/v1474876501/job_search.jpg">
+                </div>
+                <div class="contenido-publicacion-home">
+                  <h3>Best job articles and updates</h3>
+                  <p>Get the best job search articles or just let us find a job for you...<span>...</span></p>
+                </div>
+                <div class="mascara-enlace-blog-home">
+                  <span>Find a job </span>
+                </div>
+              </a>
+            </div>
+            <div class="hidden-sm col-page col-sm-4 col-md-3">
+              <a href="" class="fondo-publicacion-home">
+                <div class="img-publicacion-home">
+                  <img class="img-responsive" src="http://res.cloudinary.com/hkc0gq9vt/image/upload/h_300,w_500/v1478781813/tech_tzgdo5.jpg">
+                </div>
+                <div class="contenido-publicacion-home">
+                  <h3>Technology news and updates</h3>
+                  <p>Let us find for you what's new in the tech world<span>...</span></p>
+                </div>
+                <div class="mascara-enlace-blog-home">
+                  <span>Technology news</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-page col-sm-4 col-md-3">
+              <a href="#" class="todas-las-publicaciones-home">
+                  <span>ThinQBT the best place to find yourself.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3 col-md-3 col-lg-3">
+      <h3>Latest posts</h3>
      <%= render @posts %>
   
 </div>

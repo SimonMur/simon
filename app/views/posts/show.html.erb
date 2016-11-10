@@ -39,10 +39,10 @@ twitter card: 'summary_large_image',
     <div class="col-sm-6">
      	<% @post.tags.each do |tag| %>
 	<% end %>
-  <h1 style="font-size: 50px;
-  color: orange;
+  <h1 style="font-size: 40px;
+  color: black;
   font-family: Impact;
-  font-weight: bold; line-height: 130%;"><%= @post.title %></h1>
+  font-weight: normal; letter-spacing: -1px;"><%= link_to @post.title, post_path(@post)%></h1>
  
   <div style="font-size: 20px; font-family: cabia; letter-spacing: 1.2px;">
     <%= raw @post.body %>
